@@ -3,6 +3,17 @@
 .d{outline: 1px solid blue;}
 .h{min-height: 600px;}
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.titulo-principal{
+    color: #E12C30;
+    font-weight: bold;
+}
+
 /*============================================ 
                     HEADER
 =============================================*/
@@ -34,18 +45,19 @@ header{
 
 #video{
     min-height: 200px;
-    background-color: crimson;
+    background-color: #E12C30;
 }
 
 .video-box{
     width: 400px;
     height: 250px;
     background-color: gray;
+    margin-bottom: 20px;
 }
 
 #video form{
     width: 400px;
-    background-color:darkred;
+    background-color:#CE282B;
     
 }
 
@@ -221,9 +233,21 @@ ficar um ao lado do outro
 
 .caixa-texto-carteira p{
     padding-bottom: 20px;
+    text-align: justify;
 }
 
 .filler{
     min-height: 50vh;
     background-color: royalblue;
+}
+
+
+/*============================ 
+ OVERRIDE BTN COLOR
+==============================*/
+.btn{
+    background: linear-gradient(90deg, #12D01A 17.21%, #12D01A 78.69%);
+    border: none;
+    transition: all .3s linear;
+    border-radius: 20px;
 }
