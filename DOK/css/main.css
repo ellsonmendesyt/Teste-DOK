@@ -1,0 +1,229 @@
+.hf{height: 100%;}
+.f{background-color: rgba(0,0,0,0.2);}
+.d{outline: 1px solid blue;}
+.h{min-height: 600px;}
+
+/*============================================ 
+                    HEADER
+=============================================*/
+
+header{
+    background-image: url('../images/carros_avenida.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* min-height: 400px; */
+    background-position: top center;
+    
+}
+
+/* foto do mateus */
+.img-box{
+    margin-top: 50px;
+    /* margin-left: 150px; */
+    width: 250px;
+}
+
+.img-box-dok{
+    /* margin-top: 50px; */
+    width: 120px;
+}
+
+/*==================================== 
+    VIDEO
+=====================================*/
+
+#video{
+    min-height: 200px;
+    background-color: crimson;
+}
+
+.video-box{
+    width: 400px;
+    height: 250px;
+    background-color: gray;
+}
+
+#video form{
+    width: 400px;
+    background-color:darkred;
+    
+}
+
+/*================================= 
+SVG
+===================================*/
+
+.motivo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F9;
+    margin-bottom: 20px;
+}
+
+.motivo-icon{
+    /* padding: 5px; */
+    /* width: 120px;
+    height: 120px; */
+    border-radius: 50%;
+    background-color:#E12C30;
+    margin-bottom: 15px;
+}
+
+.motivo-texto{
+    max-width: 200px;
+    margin-left: 8px;
+}
+
+
+
+
+/*=========================================== 
+CARROS
+=============================================*/
+#carros{
+    background-color: #E12C30;
+}
+
+.carros-titulo h3, 
+.carros-titulo h5 { 
+    color: #fff;
+}
+
+#coluna-carro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carros-img-box{
+    width: 200px;
+}
+
+
+
+
+/*============================= 
+   COLUNAS DOS TEXTOS LADO A LADO
+==============================*/
+.col-texto p{
+ text-align: justify;
+}
+
+/* .cta p:nth-of-type(2) {
+    color:red;
+} */
+
+.col-imagem-direita{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+
+
+.carros-img-box-direita,.carros-img-box-esquerda{
+    /* max-width: 250px; */
+    width: 100%;
+}
+
+.carros-img-box-direita{
+    margin-bottom: 20px;
+}
+
+.row{
+    padding: 0 ;
+}
+
+
+
+/* =============================================
+Quando a tela ficar grande ajudar os icones para 
+ficar um ao lado do outro
+===============================================*/
+@media(min-width:500px){
+    .motivo{
+        flex-direction: row;
+    }
+    .img-box{
+        margin-top: 50px;
+        margin-left: 150px;
+        /* width: 250px; */
+    }
+
+    .carros-img-box-direita, .carros-img-box-esquerda{
+        /* max-width: 350px; */
+        width: 90%;
+    }
+
+    /* na tela pequena toma todo espaço */
+    .img-box-carteira{
+        width: 100%;
+    }
+   
+}
+
+@media (min-width:850px){
+    .carros-img-box-direita{
+        /* max-width: 350px; */
+        width: 60%;
+    }
+    .carros-img-box-esquerda{
+        width: 50% !important;               /* <---------*/
+        justify-content: right;
+    }
+
+    /* quando a tela tiver grande nao aumente demais */
+    .img-box-carteira{
+        max-width: 300px;
+    }
+    
+   
+}
+
+
+.carros-img-box-esquerda{
+ width: 100%;
+ justify-content: center;
+ margin-bottom: 20px;
+}
+
+.col-imagem-esquerda{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* 
+   Coluna da carteira
+*/
+.col-box-carteira{
+    display: flex;
+    justify-content: center;
+}
+
+/* maxima largura na tela grande */
+.col-texto-carteira{
+    display: flex;
+    justify-content: left;
+}
+
+
+
+.caixa-texto-carteia{
+    width: 100%;
+    min-height: 200px;
+}
+
+.caixa-texto-carteira p{
+    padding-bottom: 20px;
+}
+
+.filler{
+    min-height: 50vh;
+    background-color: royalblue;
+}
