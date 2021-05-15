@@ -1,0 +1,360 @@
+/* =================================
+CLASSES USADAS APENAS PARA DEBUGAR
+===================================*/
+
+.hf{height: 100%;}
+.f{background-color: rgba(0,0,0,0.2);}
+.d{outline: 1px solid blue;}
+.h{min-height: 600px;}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.titulo-principal{
+    color: #E12C30;
+    font-weight: bold;
+}
+
+
+
+/* =============================
+  HEADER GRID
+===============================*/
+
+/* Quando em tela mobile */
+#header{
+
+    background-image: url('../images/carros_avenida.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* min-height: 400px; */
+    background-position: top center;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-auto-rows: minmax(50px,auto) ;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+    " right"
+    "left"
+    ;
+}
+
+
+
+
+/* ===================
+  criar as areas
+======================*/
+.left{ grid-area: left;}
+.right{ grid-area:right;}
+
+
+.dok-logo{
+    width: 120px;
+    margin: 40px auto;
+}
+
+.header-btn{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.leading{
+    margin: 20px auto;
+    text-align: center;
+    color: #E12C30;
+    font-weight: bold;
+}
+
+
+.dok-logo{grid-area: dok;}
+.leading{grid-area: leading;}
+.header-btn{grid-area: btn;}
+
+
+
+/* ========================= 
+    SUB GRID
+===========================*/
+.right{
+    display: grid;
+    grid-template-columns: 1fr ;
+
+    grid-template-areas: 
+    "dok"
+    "leading"
+    "btn"
+    ;
+}
+
+
+@media (min-width:700px){
+    #header{
+        grid-template-columns:1fr 2fr;
+        grid-template-areas:
+        " left right"
+        ;
+    }
+
+    .right{
+        grid-template-areas: 1fr 1f ;
+        grid-template-areas: 
+        " dok btn "
+        " leading leading ";
+    }
+
+    .dok-logo{
+        justify-items: start;
+        margin-left: 50px;
+    }
+    .header-btn{
+        justify-items:end;
+        margin-right: 80px !important;
+        height: 40px;
+        width: 220px;
+        align-self: center;
+    }
+
+    .leading{
+        text-align: left;
+        max-width: 450px;
+    }
+    
+    
+}
+
+.left{
+    width: 100%;
+}
+.right{
+    width: 100%;
+    height: 100%;
+}
+
+.mateus{
+    margin-top: 40px !important;
+    width: 230px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/*==================================== 
+    VIDEO
+=====================================*/
+
+#video{
+    min-height: 200px;
+    background-color: #E12C30;
+}
+
+.video-box{
+    width: 400px;
+    height: 250px;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+
+#video form{
+    width: 400px;
+    background-color:#CE282B;
+    
+}
+
+/*================================= 
+SVG
+===================================*/
+
+.motivo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F9;
+    margin-bottom: 20px;
+}
+
+.motivo-icon{
+    border-radius: 50%;
+    background-color:#E12C30;
+    margin-bottom: 15px;
+}
+
+.motivo-texto{
+    max-width: 200px;
+    margin-left: 8px;
+}
+
+
+
+
+/*=========================================== 
+CARROS
+=============================================*/
+#carros{
+    background-color: #E12C30;
+}
+
+.carros-titulo h3, 
+.carros-titulo h5 { 
+    color: #fff;
+}
+
+#coluna-carro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carros-img-box{
+    width: 200px;
+}
+
+
+
+
+/*============================= 
+   COLUNAS DOS TEXTOS LADO A LADO
+==============================*/
+.col-texto p{
+ text-align: justify;
+}
+
+.col-imagem-direita{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+.carros-img-box-direita,.carros-img-box-esquerda{
+    /* max-width: 250px; */
+    width: 100%;
+}
+
+.carros-img-box-direita{
+    margin-bottom: 20px;
+}
+
+.row{
+    padding: 0 ;
+}
+/* ======================================================================= */
+
+
+
+
+/* =============================================
+Quando a tela ficar grande ajudar os icones para 
+ficar um ao lado do outro
+===============================================*/
+@media(min-width:500px){
+    .motivo{
+        flex-direction: row;
+    }
+    .img-box{
+        margin-top: 50px;
+        margin-left: 100px;
+        /* width: 250px; */
+    }
+
+    .carros-img-box-direita, .carros-img-box-esquerda{
+        /* max-width: 350px; */
+        width: 90%;
+    }
+
+    /* na tela pequena toma todo espaço */
+    .img-box-carteira{
+        width: 100%;
+    }
+
+
+
+   
+}
+
+@media (min-width:850px){
+    .carros-img-box-direita{
+        /* max-width: 350px; */
+        width: 60%;
+    }
+    .carros-img-box-esquerda{
+        width: 50% !important;               /* <---------*/
+        justify-content: right;
+    }
+
+    /* quando a tela tiver grande nao aumente demais */
+    .img-box-carteira{
+        max-width: 300px;
+    }
+
+    
+   
+   
+}
+
+
+.carros-img-box-esquerda{
+ width: 100%;
+ justify-content: center;
+ margin-bottom: 20px;
+}
+
+.col-imagem-esquerda{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* 
+   Coluna da carteira
+*/
+.col-box-carteira{
+    display: flex;
+    justify-content: center;
+}
+
+/* maxima largura na tela grande */
+.col-texto-carteira{
+    display: flex;
+    justify-content: left;
+}
+
+
+
+.caixa-texto-carteia{
+    width: 100%;
+    min-height: 200px;
+}
+
+.caixa-texto-carteira p{
+    padding-bottom: 20px;
+    text-align: justify;
+}
+
+.filler{
+    min-height: 50vh;
+    background-color: royalblue;
+}
+
+
+/*============================ 
+ OVERRIDE BTN COLOR
+==============================*/
+.btn{
+    background: linear-gradient(90deg, #12D01A 17.21%, #12D01A 78.69%);
+    border: none;
+    transition: all .3s linear;
+    border-radius: 20px;
+}
