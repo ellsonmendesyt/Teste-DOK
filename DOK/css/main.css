@@ -1,3 +1,7 @@
+/* =================================
+CLASSES USADAS APENAS PARA DEBUGAR
+===================================*/
+
 .hf{height: 100%;}
 .f{background-color: rgba(0,0,0,0.2);}
 .d{outline: 1px solid blue;}
@@ -14,30 +18,135 @@ body{
     font-weight: bold;
 }
 
-/*============================================ 
-                    HEADER
-=============================================*/
 
-header{
+
+/* =============================
+  HEADER GRID
+===============================*/
+
+/* Quando em tela mobile */
+#header{
+
     background-image: url('../images/carros_avenida.png');
     background-repeat: no-repeat;
     background-size: cover;
     /* min-height: 400px; */
     background-position: top center;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-auto-rows: minmax(50px,auto) ;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+    " right"
+    "left"
+    ;
+}
+
+
+
+
+/* ===================
+  criar as areas
+======================*/
+.left{ grid-area: left;}
+.right{ grid-area:right;}
+
+
+.dok-logo{
+    width: 120px;
+    margin: 40px auto;
+}
+
+.header-btn{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.leading{
+    margin: 20px auto;
+    text-align: center;
+    color: #E12C30;
+    font-weight: bold;
+}
+
+
+.dok-logo{grid-area: dok;}
+.leading{grid-area: leading;}
+.header-btn{grid-area: btn;}
+
+
+
+/* ========================= 
+    SUB GRID
+===========================*/
+.right{
+    display: grid;
+    grid-template-columns: 1fr ;
+
+    grid-template-areas: 
+    "dok"
+    "leading"
+    "btn"
+    ;
+}
+
+
+@media (min-width:700px){
+    #header{
+        grid-template-columns:1fr 2fr;
+        grid-template-areas:
+        " left right"
+        ;
+    }
+
+    .right{
+        grid-template-areas: 1fr 1f ;
+        grid-template-areas: 
+        " dok btn "
+        " leading leading ";
+    }
+
+    .dok-logo{
+        justify-items: start;
+        margin-left: 50px;
+    }
+    .header-btn{
+        justify-items:end;
+        margin-right: 80px !important;
+        height: 40px;
+        width: 220px;
+        align-self: center;
+    }
+
+    .leading{
+        text-align: left;
+        max-width: 450px;
+    }
+    
     
 }
 
-/* foto do mateus */
-.img-box{
-    margin-top: 50px;
-    /* margin-left: 150px; */
-    width: 250px;
+.left{
+    width: 100%;
+}
+.right{
+    width: 100%;
+    height: 100%;
 }
 
-.img-box-dok{
-    /* margin-top: 50px; */
-    width: 120px;
+.mateus{
+    margin-top: 40px !important;
+    width: 230px;
+    margin: 0 auto;
 }
+
+
+
+
+
+
+
 
 /*==================================== 
     VIDEO
@@ -75,9 +184,6 @@ SVG
 }
 
 .motivo-icon{
-    /* padding: 5px; */
-    /* width: 120px;
-    height: 120px; */
     border-radius: 50%;
     background-color:#E12C30;
     margin-bottom: 15px;
@@ -122,10 +228,6 @@ CARROS
  text-align: justify;
 }
 
-/* .cta p:nth-of-type(2) {
-    color:red;
-} */
-
 .col-imagem-direita{
     display: flex;
     text-align: center;
@@ -133,8 +235,6 @@ CARROS
 
     width: 100%;
 }
-
-
 
 
 .carros-img-box-direita,.carros-img-box-esquerda{
@@ -149,6 +249,8 @@ CARROS
 .row{
     padding: 0 ;
 }
+/* ======================================================================= */
+
 
 
 
@@ -162,7 +264,7 @@ ficar um ao lado do outro
     }
     .img-box{
         margin-top: 50px;
-        margin-left: 150px;
+        margin-left: 100px;
         /* width: 250px; */
     }
 
@@ -175,6 +277,9 @@ ficar um ao lado do outro
     .img-box-carteira{
         width: 100%;
     }
+
+
+
    
 }
 
@@ -192,7 +297,9 @@ ficar um ao lado do outro
     .img-box-carteira{
         max-width: 300px;
     }
+
     
+   
    
 }
 
